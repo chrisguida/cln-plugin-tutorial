@@ -6,7 +6,7 @@ Twitter: @cguida6
 Welcome! In this tutorial, you'll write your own CLN plugin! To help you get started as fast as possible, we've put together a repl.it environment with Bitcoin Core (`bitcoind`) and Core Lightning (`lightningd`) already installed. So all you need to do is read through each section and follow the examples, and at the end you'll have a working CLN plugin.
 
 ## Session Agenda:
-- Build a minimal python plugin
+- Build a minimal rust plugin
   - An init method
   - An RPC method
   - An option
@@ -26,5 +26,5 @@ Welcome! In this tutorial, you'll write your own CLN plugin! To help you get sta
 ## Chris's Hackathon Plugin Ideas He Could Help You With:
 
 1. (Easy) Implement an RPC method as a CLI tool that reports various stats about your node.
-2. (Medium) Port any plugin to a different language. Python tends to be slower and more bloated than other languages, so Rust and Go can really help to slim things down and speed them up.
+2. (Medium) Write a telegram bot that communicates with your node
 3. (Hard) Add support for trampoline routing between liquid and normal lightning network.

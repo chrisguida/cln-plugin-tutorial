@@ -103,7 +103,7 @@ The plugin's response will look something like this:
 Now your plugin can do stuff!
 
 # Exercise: Build a bare minimum plugin that conforms to the above requirements
-If you click on [`helloworld.py`](/home/runner/Writing-Your-First-CLN-Plugin/helloworld.py) in the file tree to your left, you will see a basic CLN plugin written in Python. It doesn't do much, yet. It pretty much just runs. We'll add more to it as we work through this tutorial.
+If you click on [`rust-plugin/src/main.rs`](/home/runner/Writing-Your-First-CLN-Plugin/rust-plugin/src/main.rs) in the file tree to your left, you will see a basic CLN plugin written in Rust. It doesn't do much, yet. It pretty much just runs. We'll add more to it as we work through this tutorial.
 
 Here it is:
 ```py
@@ -124,23 +124,32 @@ To test, open a shell and enter the following commands:
 ```
 mkdir -p ~/.bitcoin
 source startup_regtest.sh
-start_ln 
+start_ln
 
 # This will launch `bitcoind` in regtest mode and attach two LN nodes to it.
+
+# Enter the above three commands in the default replit directory (~/Writing-Your-First-CLN-Plugin-Rust-version) whenever reloading replit. This can happen randomly sometimes, or after a timeout, or if you close the repl then return.
 
 l1-cli getinfo
 
 # ...to check that your node is running
 
-l1-cli plugin start $(pwd)/helloworld.py
+# Now build your plugin:
 
-# This will launch your plugin on Node #1.
+cd rust-plugin
+cargo build
+
+# When the build finishes, start your plugin:
+
+l1-cli plugin start $(pwd)/target/debug/rust-plugin
+
+# This will launch your plugin on Node #1. You should see a list of running plugins with your rust plugin as the last entry in the list.
 
 l1-log
 
-# will display Node #1's logfile. If you scroll to the bottom, you should see your plugin's init message.
+# will display Node #1's logfile. If you scroll to the bottom of the pager (shift + G), you should see a message from plugin-manager saying your plugin was started.
 ```
 
 Press `q` to return to the shell.
 
-- [ ] Launch a Python plugin with a message on init success, and find success message in the log.
+- [ ] Launch a Rust plugin with a message on init success, and find success message in the log.

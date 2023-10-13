@@ -9,24 +9,6 @@ async fn main() -> Result<(), anyhow::Error> {
     let state = ();
 
     if let Some(plugin) = Builder::new(tokio::io::stdin(), tokio::io::stdout())
-        .option(options::ConfigOption::new(
-            "test-option",
-            options::Value::Integer(42),
-            "a test-option with default 42",
-        ))
-        .option(options::ConfigOption::new(
-            "opt-option",
-            options::Value::OptInteger,
-            "An optional option",
-        ))
-        .rpcmethod("testmethod", "This is a test", testmethod)
-        .rpcmethod(
-            "testoptions",
-            "Retrieve options from this plugin",
-            testoptions,
-        )
-        .subscribe("connect", connect_handler)
-        .hook("peer_connected", peer_connected_handler)
         .dynamic()
         .start(state)
         .await?
@@ -35,27 +17,4 @@ async fn main() -> Result<(), anyhow::Error> {
     } else {
         Ok(())
     }
-}
-
-async fn testoptions(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
-    Ok(json!({
-        "opt-option": format!("{:?}", p.option("opt-option").unwrap())
-    }))
-}
-
-async fn testmethod(_p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
-    Ok(json!("Hello"))
-}
-
-async fn connect_handler(_p: Plugin<()>, v: serde_json::Value) -> Result<(), Error> {
-    log::info!("Got a connect notification: {}", v);
-    Ok(())
-}
-
-async fn peer_connected_handler(
-    _p: Plugin<()>,
-    v: serde_json::Value,
-) -> Result<serde_json::Value, Error> {
-    log::info!("Got a connect hook call: {}", v);
-    Ok(json!({"result": "continue"}))
 }
