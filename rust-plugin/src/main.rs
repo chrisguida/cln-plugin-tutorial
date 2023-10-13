@@ -2,6 +2,7 @@
 //! plugins using the Rust API against Core Lightning.
 #[macro_use]
 extern crate serde_json;
+use anyhow::anyhow;
 use cln_plugin::{options, Builder, Error, Plugin};
 use tokio;
 #[tokio::main]
