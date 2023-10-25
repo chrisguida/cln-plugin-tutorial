@@ -38,13 +38,13 @@ l1-cli hello
 Try it with an argument:
 
 ```
-l1-cli hello <your name>
+l1-cli testmethod <your name>
 ```
 
 Try causing the rpc call to throw an error:
 
 ```
-l1-cli hello too many arguments
+l1-cli testmethod too many arguments
 ```
 
 - [ ] Add an RPC method
