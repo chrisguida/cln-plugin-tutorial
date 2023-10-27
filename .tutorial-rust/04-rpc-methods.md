@@ -51,7 +51,7 @@ Now invoke your new RPC method:
 l1-cli testmethod
 ```
 
-Now, lets use the `serde_json::value` parameter which allows us to pass arguments.
+Now, let's use the `serde_json::Value` parameter which allows us to pass arguments.
 Create a new method `testmethod_argument` and register it in your main() function.
 Change `_v` to `v` as it is no longer an unused parameter.
 
@@ -72,8 +72,8 @@ l1-cli testmethod_argument <your name>
 ```
 
 The v argument is passed to our RPC method as json.
-Parsing the string and printing just the string is left as an exercise to the reader.
-Bonus is to print an error if more than 1 argument is passed.
+Parsing and printing just the string (properly formatted, without escape characters) is left as an exercise to the reader.
+As a bonus exercise, print an error if more than 1 argument is passed.
 
 - [ ] Add an RPC method
 - [ ] Test that it works as expected
