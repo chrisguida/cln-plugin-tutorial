@@ -12,6 +12,8 @@ async fn main() -> Result<(), anyhow::Error> {
 
     if let Some(plugin) = Builder::new(tokio::io::stdin(), tokio::io::stdout())
         .rpcmethod("testmethod", "This is a test", testmethod)
+        .rpcmethod("testmethod_argument", "This is a test", testmethod_argument)
+        .rpcmethod("testmethod_argument_bonus", "This is a test", testmethod_argument_bonus)
         .option(options::ConfigOption::new(
             "name",
             options::Value::String("World".to_string()),
@@ -29,7 +31,32 @@ async fn main() -> Result<(), anyhow::Error> {
     }
 }
 
-async fn testmethod(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
+async fn testmethod(_p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
+    Ok(json!("Hello"))
+}
+
+async fn testmethod_argument(p: Plugin<()>, v: serde_json::Value) -> Result<serde_json::Value, Error> {
+  Ok(json!(format!("Hello, {}", v)))
+}
+
+async fn testmethod_option(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
+    Ok(json!(format!("Hello, {:?}", p.option("name").unwrap())))
+}
+
+async fn connect_handler(_p: Plugin<()>, v: serde_json::Value) -> Result<(), Error> {
+    log::info!("Got a connect notification: {}", v);
+    Ok(())
+}
+
+async fn peer_connected_handler(
+    _p: Plugin<()>,
+    v: serde_json::Value,
+) -> Result<serde_json::Value, Error> {
+    log::info!("Got a connect hook call: {}", v);
+    Ok(json!({"result": "continue"}))
+}
+
+async fn testmethod_argument_bonus(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
     let name_value = p
         .option("name")
         .unwrap_or_else(|| options::Value::String("Unknown".to_string()));
@@ -38,11 +65,6 @@ async fn testmethod(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::
     } else {
         Err(anyhow!("Expected a string for 'name' option".to_string())) // Adjust the error type and message as needed
     }
-}
-
-async fn connect_handler(_p: Plugin<()>, v: serde_json::Value) -> Result<(), Error> {
-    log::info!("Got a connect notification: {}", v);
-    Ok(())
 }
 
 async fn on_htlc_accepted(
