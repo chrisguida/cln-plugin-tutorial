@@ -106,17 +106,26 @@ Now your plugin can do stuff!
 If you click on [`rust-plugin/src/main.rs`](/home/runner/Writing-Your-First-CLN-Plugin/rust-plugin/src/main.rs) in the file tree to your left, you will see a basic CLN plugin written in Rust. It doesn't do much, yet. It pretty much just runs. We'll add more to it as we work through this tutorial.
 
 Here it is:
-```py
-#!/usr/bin/env python3
-from pyln.client import Plugin # We import `Plugin` from the `pyln-client` pip package, which does all the hard work for us
+```rust
+#[macro_use]
+extern crate serde_json;
+use anyhow::anyhow;
+use cln_plugin::{options, Builder, Error, Plugin};
+use tokio;
+#[tokio::main]
+async fn main() -> Result<(), anyhow::Error> {
+    let state = ();
 
-plugin = Plugin() # This is our plugin's handle
-
-@plugin.init() # Decorator to define a callback once the `init` method call has successfully completed
-def init(options, configuration, plugin, **kwargs):
-    plugin.log("Plugin helloworld.py initialized")
-
-plugin.run() # Run our plugin
+    if let Some(plugin) = Builder::new(tokio::io::stdin(), tokio::io::stdout())
+        .dynamic()
+        .start(state)
+        .await?
+    {
+        plugin.join().await
+    } else {
+        Ok(())
+    }
+}
 ```
 
 To test, open a shell and enter the following commands:

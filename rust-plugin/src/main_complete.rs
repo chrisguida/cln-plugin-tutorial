@@ -29,6 +29,30 @@ async fn main() -> Result<(), anyhow::Error> {
     }
 }
 
+async fn testoptions(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
+    Ok(json!({
+        "opt-option": format!("{:?}", p.option("opt-option").unwrap())
+    }))
+}
+
+async fn testmethod(_p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
+    Ok(json!("Hello"))
+}
+
+async fn connect_handler(_p: Plugin<()>, v: serde_json::Value) -> Result<(), Error> {
+    log::info!("Got a connect notification: {}", v);
+    Ok(())
+}
+
+async fn peer_connected_handler(
+    _p: Plugin<()>,
+    v: serde_json::Value,
+) -> Result<serde_json::Value, Error> {
+    log::info!("Got a connect hook call: {}", v);
+    Ok(json!({"result": "continue"}))
+}
+
+
 async fn testmethod(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
     let name_value = p
         .option("name")
