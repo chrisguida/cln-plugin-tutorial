@@ -51,16 +51,19 @@ Now invoke your new RPC method:
 l1-cli testmethod
 ```
 
+Now, lets use the `serde_json::value` parameter which allows us to pass arguments.
+Change `_v` to `v` as it is no longer an unused parameter.
+
+```rust
+async fn testmethod(p: Plugin<()>, v: serde_json::Value) -> Result<serde_json::Value, Error> {
+  Ok(json!(format!("Hello {}", v)))
+}
+```
+
 Try it with an argument:
 
 ```
 l1-cli testmethod <your name>
-```
-
-Try causing the rpc call to throw an error:
-
-```
-l1-cli testmethod too many arguments
 ```
 
 - [ ] Add an RPC method

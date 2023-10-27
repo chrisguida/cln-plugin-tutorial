@@ -107,6 +107,8 @@ If you click on [`rust-plugin/src/main.rs`](/home/runner/Writing-Your-First-CLN-
 
 Here it is:
 ```rust
+//! This is a test plugin used to verify that we can compile and run
+//! plugins using the Rust API against Core Lightning.
 #[macro_use]
 extern crate serde_json;
 use anyhow::anyhow;
