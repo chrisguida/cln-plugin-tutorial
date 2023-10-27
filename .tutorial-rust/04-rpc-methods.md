@@ -52,10 +52,15 @@ l1-cli testmethod
 ```
 
 Now, lets use the `serde_json::value` parameter which allows us to pass arguments.
+Create a new method `testmethod_argument` and register it in your main() function.
 Change `_v` to `v` as it is no longer an unused parameter.
 
 ```rust
-async fn testmethod(p: Plugin<()>, v: serde_json::Value) -> Result<serde_json::Value, Error> {
+.rpcmethod("testmethod_argument", "This is a test", testmethod_argument)
+```
+
+```rust
+async fn testmethod_argument(p: Plugin<()>, v: serde_json::Value) -> Result<serde_json::Value, Error> {
   Ok(json!(format!("Hello {}", v)))
 }
 ```
@@ -63,7 +68,7 @@ async fn testmethod(p: Plugin<()>, v: serde_json::Value) -> Result<serde_json::V
 Try it with an argument:
 
 ```
-l1-cli testmethod <your name>
+l1-cli testmethod_argument <your name>
 ```
 
 - [ ] Add an RPC method

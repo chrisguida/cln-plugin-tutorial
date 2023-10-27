@@ -19,21 +19,14 @@ Add this code to your `main.rs` file (hint: insert this before `.dynamic()`):
 ))
 ```
 
-Next, edit your `testmethod` RPC method from the previous step to use your
-option in that call:
-
-Change your rpc handler `testmethod` from:
+Next, add a new method `testmethod_option` RPC method to use your option in that call.
 
 ```rust
-async fn testmethod(_p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
-    Ok(json!("Hello"))
-}
+.rpcmethod("testmethod_option", "This is a test", testmethod_option)
 ```
 
-To look like:
-
 ```rust
-async fn testmethod(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
+async fn testmethod_option(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
     Ok(json!(format!("Hello, {:?}", p.option("name").unwrap())))
 }
 ```
@@ -61,10 +54,10 @@ Now start your plugin, inserting a value for your new option:
 l1-cli -k plugin subcommand=start plugin=$(pwd)/target/debug/rust-plugin name='<insert name here>'
 ```
 
-Now invoke the updated `testmethod` RPC method:
+Now invoke the new `testmethod_option` RPC method:
 
 ```sh
-l1-cli testmethod
+l1-cli testmethod_option
 ```
 
 Try it with various arguments, and see what happens.
