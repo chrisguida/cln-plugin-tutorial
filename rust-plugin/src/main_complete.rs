@@ -13,6 +13,7 @@ async fn main() -> Result<(), anyhow::Error> {
     if let Some(plugin) = Builder::new(tokio::io::stdin(), tokio::io::stdout())
         .rpcmethod("testmethod", "This is a test", testmethod)
         .rpcmethod("testmethod_argument", "This is a test", testmethod_argument)
+        .rpcmethod("testmethod_argument_bonus", "This is a test", testmethod_argument_bonus)
         .option(options::ConfigOption::new(
             "name",
             options::Value::String("World".to_string()),
@@ -28,12 +29,6 @@ async fn main() -> Result<(), anyhow::Error> {
     } else {
         Ok(())
     }
-}
-
-async fn testoptions(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
-    Ok(json!({
-        "opt-option": format!("{:?}", p.option("opt-option").unwrap())
-    }))
 }
 
 async fn testmethod(_p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
@@ -61,7 +56,7 @@ async fn peer_connected_handler(
     Ok(json!({"result": "continue"}))
 }
 
-async fn testmethod(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
+async fn testmethod_argument_bonus(p: Plugin<()>, _v: serde_json::Value) -> Result<serde_json::Value, Error> {
     let name_value = p
         .option("name")
         .unwrap_or_else(|| options::Value::String("Unknown".to_string()));

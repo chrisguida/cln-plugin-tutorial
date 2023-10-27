@@ -71,5 +71,9 @@ Try it with an argument:
 l1-cli testmethod_argument <your name>
 ```
 
+The v argument is passed to our RPC method as json.
+Parsing the string and printing just the string is left as an exercise to the reader.
+Bonus is to print an error if more than 1 argument is passed.
+
 - [ ] Add an RPC method
 - [ ] Test that it works as expected
