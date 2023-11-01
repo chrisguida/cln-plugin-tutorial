@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.vim
     pkgs.openssh
     pkgs.python38Packages.pip
     pkgs.rustc
