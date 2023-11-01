@@ -1,0 +1,5 @@
+export CARGO_HOME=$REPL_HOME/.cargo
+export CARGO_TARGET_DIR=$REPL_HOME/rust-plugin/target
+mkdir -p ~/.bitcoin
+source $REPL_HOME/startup_regtest.sh
+start_ln
