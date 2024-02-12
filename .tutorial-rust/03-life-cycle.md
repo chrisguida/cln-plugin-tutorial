@@ -103,7 +103,7 @@ The plugin's response will look something like this:
 Now your plugin can do stuff!
 
 # Exercise: Build a bare minimum plugin that conforms to the above requirements
-If you click on [`rust-plugin/src/main.rs`](/home/runner/Writing-Your-First-CLN-Plugin/rust-plugin/src/main.rs) in the file tree to your left, you will see a basic CLN plugin written in Rust. It doesn't do much, yet. It pretty much just runs. We'll add more to it as we work through this tutorial.
+If you click on [`rust-plugin/src/main.rs`](/home/runner/$REPL_SLUG/rust-plugin/src/main.rs) in the file tree to your left, you will see a basic CLN plugin written in Rust. It doesn't do much, yet. It pretty much just runs. We'll add more to it as we work through this tutorial.
 
 Here it is:
 ```rust
@@ -139,7 +139,7 @@ start_ln
 
 # This will launch `bitcoind` in regtest mode and attach two LN nodes to it.
 
-# Enter the above three commands in the default replit directory (~/Writing-Your-First-CLN-Plugin-Rust-version) whenever reloading replit. This can happen randomly sometimes, or after a timeout, or if you close the repl then return.
+# Enter the above three commands in the default replit directory (~/$REPL_SLUG-Rust-version) whenever reloading replit. This can happen randomly sometimes, or after a timeout, or if you close the repl then return.
 
 l1-cli getinfo
 

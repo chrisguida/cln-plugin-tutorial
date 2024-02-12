@@ -30,7 +30,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/runner/Writing-Your-First-CLN-Plugin/venv"
+set -gx VIRTUAL_ENV "/home/runner/$REPL_SLUG/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
