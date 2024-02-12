@@ -31,7 +31,7 @@ Now let's test! Go to the shell and restart your plugin:
 
 ```sh
 l1-cli plugin stop helloworld.py && 
-l1-cli plugin start $(pwd)/helloworld.py
+l1-cli plugin start $(pwd)/python-plugin/helloworld.py
 ```
 
 Grab Node 1’s pubkey and listening address:

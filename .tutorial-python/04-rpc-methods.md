@@ -26,7 +26,7 @@ def hello(plugin, name="world"):
 Now let's test! Restart your plugin:
 
 ```sh
-l1-cli plugin stop helloworld.py && l1-cli plugin start $(pwd)/helloworld.py
+l1-cli plugin stop helloworld.py && l1-cli plugin start $(pwd)/python-plugin/helloworld.py
 ```
 
 Now invoke your new RPC method:

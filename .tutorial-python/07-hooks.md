@@ -66,7 +66,7 @@ import time
 Now let's test! Go to the shell and start your plugin, this time on Node 2:
 
 ```sh
-l2-cli plugin start $(pwd)/helloworld.py
+l2-cli plugin start $(pwd)/python-plugin/helloworld.py
 ```
 
 Run this command to create a channel between your nodes:

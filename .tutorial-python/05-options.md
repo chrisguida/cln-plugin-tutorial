@@ -34,7 +34,7 @@ l1-cli plugin stop helloworld.py
 Now start your plugin, inserting a value for your new option:
 
 ```sh
-l1-cli -k plugin subcommand=start plugin=$(pwd)/helloworld.py greeting='A crazy'
+l1-cli -k plugin subcommand=start plugin=$(pwd)/python-plugin/helloworld.py greeting='A crazy'
 ```
 
 Now invoke the updated `hello` RPC method:
