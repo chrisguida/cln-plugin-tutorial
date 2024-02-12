@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: pyln-proto
+Version: 23.2
+Summary: This package implements some of the Lightning Network protocol in pure python. It is intended for protocol testing and some minor tooling only. It is not deemed secure enough to handle any amount of real funds (you have been warned!).
+License: BSD-MIT
+Author: Christian Decker
+Author-email: decker.christian@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: PySocks (>=1.7.1,<2.0.0)
+Requires-Dist: base58 (>=2.1.1,<3.0.0)
+Requires-Dist: bitstring (>=3.1.9,<4.0.0)
+Requires-Dist: coincurve (>=17.0.0,<18.0.0)
+Requires-Dist: cryptography (>=36.0.1,<37.0.0)
+Description-Content-Type: text/markdown
+
+# pyln-proto: Lightning Network protocol implementation
+
+This package implements some of the Lightning Network protocol in pure
+python. It is intended for protocol testing and some minor tooling only. It is
+not deemed secure enough to handle any amount of real funds (you have been
+warned!).
+
+
+## Installation
+
+`pyln-proto` is available on `pip`:
+
+```
+pip install pyln-proto
+```
+
+Alternatively you can also install the development version to get access to
+currently unreleased features by checking out the Core Lightning source code and
+installing into your python3 environment:
+
+```bash
+git clone https://github.com/ElementsProject/lightning.git
+cd lightning/contrib/pyln-proto
+poetry install
+```
+
+This will add links to the library into your environment so changing the
+checked out source code will also result in the environment picking up these
+changes. Notice however that unreleased versions may change API without
+warning, so test thoroughly with the released version.
+
