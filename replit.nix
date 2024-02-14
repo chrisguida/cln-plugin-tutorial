@@ -2,7 +2,7 @@
   deps = [
     pkgs.vim
     pkgs.openssh
-    pkgs.python38Packages.pip
+    pkgs.python310Packages.pip
     pkgs.rustc
 		pkgs.rustfmt
 		pkgs.cargo
@@ -13,7 +13,7 @@
     pkgs.busybox
     pkgs.htop
     pkgs.less
-    pkgs.python38Full
+    pkgs.python310Full
     pkgs.bitcoind
     pkgs.clightning
     pkgs.pstree
@@ -22,7 +22,7 @@
     PYTHON_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
     
     ];
-    PYTHONBIN = "${pkgs.python38Full}/bin/python3.8";
+    PYTHONBIN = "${pkgs.python310Full}/bin/python3.10";
     LANG = "en_US.UTF-8";
   };
 }
