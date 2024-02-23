@@ -75,7 +75,7 @@ differences:
 Add this code to your `main.rs` file (hint: insert this before `.dynamic()`):
 
 ```rust
-.subscribe("connect", connect_handler)
+.hook("htlc_accepted", on_htlc_accepted)
 ```
 
 This registers the plugin to listen for `htlc_accepted` hooks and respond with a
