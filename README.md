@@ -18,6 +18,13 @@ ln -s .tutorial-rust/ .tutorial
 
 The `.tutorial` directory is what will be displayed in the Replit Tutorial tab.
 
+If you are getting the message `awaiting bitcoind...` then you need to run these commands
+
+```
+$ rm ~/.bitcoin/regtest/bitcoind.pid
+$ start_ln
+```
+
 Note: If the "Console" tab is open, please close it, as you will not be needing it.
 
 The only things you'll need are:
