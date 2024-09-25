@@ -45,4 +45,8 @@ The only things you'll need are:
 
 Make sure the editor tab is displaying either `python-plugin/helloworld.py` (for Python) or `rust-plugin/src/main.rs` (for Rust). You can find both files in the file tree sidebar.
 
+The screen should look something like this when you are done setting up:
+
+![photo_2024-09-25_17-17-47](https://github.com/user-attachments/assets/74868b43-7bf6-4ba9-bc2a-375918963def)
+
 Happy hacking!
