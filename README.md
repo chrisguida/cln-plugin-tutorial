@@ -10,8 +10,6 @@ Please register for an account if you don't already have one, and then click [th
 
 This repo will not do anything useful if you don't click the link above.
 
-Go to the top left and open the sidebar and open the file 
-
 You will need to enter one of the commands below in the shell tab to let the tutorial know whether you would like to build a Python plugin or a Rust plugin.
 
 - If you would like to work in **Python**, rename the `.tutorial-python` directory to `.tutorial`, or create a symlink like so:
