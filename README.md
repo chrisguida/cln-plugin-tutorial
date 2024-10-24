@@ -6,6 +6,11 @@ This tutorial will teach you how to build a CLN plugin.
 
 In order to do this tutorial, you need an account on replit.com.
 
+Fork my repl to do the tutorial in Python or Rust:
+- Python: https://replit.com/@chrisguida1/Writing-Your-First-CLN-Plugin
+- Rust: https://replit.com/@chrisguida1/Writing-Your-First-CLN-Plugin-Rust-version
+
+## The below version doesn't work yet, use the replit link above and **make sure to fork it to your own user** or it will not work.
 Please register for an account if you don't already have one, and then click [this link](https://replit.com/github/chrisguida/cln-plugin-tutorial) to start the tutorial. Clicking this link will clone this github repo into your replit.com user's account, and then open it.
 
 This repo will not do anything useful if you don't click the link above.
