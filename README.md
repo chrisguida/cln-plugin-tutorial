@@ -21,8 +21,8 @@ Here are the links to fork the project:
 
 1. **Log in** to your Replit account.
 2. Click on one of the links above to open the project.
-3. Once the Repl opens, look for the "Fork" button at the top-right corner of the page.
-4. **Click on "Fork"** to copy the Repl to your own account.
+3. Once the Repl opens, look for the "Remix this app" button at the left half of the page.
+4. **Click on "Remix this app"** to copy the Repl to your own account.
 5. After forking, you will see the project in your Replit workspace, and you can start editing it.
 
 Now that you've forked the Repl, you can follow the instructions in the project to start building your own CLN plugin!
