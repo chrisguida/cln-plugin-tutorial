@@ -14,7 +14,7 @@ To begin this tutorial, you'll need to fork my Repl to your own Replit account. 
 
 Here are the links to fork the project:
 
-- **Python Version**: [Writing Your First CLN Plugin (Python)](https://replit.com/@chrisguida1/Writing-Your-First-CLN-Plugin)
+- **Python Version**: [Writing Your First CLN Plugin (Python)](https://replit.com/@chrisguida1/cln-plugin-tutorial-3)
 - **Rust Version**: [Writing Your First CLN Plugin (Rust)](https://replit.com/@chrisguida1/Writing-Your-First-CLN-Plugin-Rust-version)
 
 ### How to Fork the Repl
