@@ -10,12 +10,12 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'NixOS MutinyNet Tutorial',
-  tagline: 'Welcome to the NixOS MutinyNet Tutorial. This guide will walk you through setting up and using MutinyNet with NixOS.',
+  title: 'CLN Plugin Tutorial',
+  tagline: 'This tutorial will guide you through building your own Core Lightning (CLN) plugin.',
   url: 'https://chrisguida.github.io',
-  baseUrl: '/nixos-mutinynet-tutorial/',
+  baseUrl: '/cln-plugin-tutorial/',
   organizationName: 'chrisguida', // Usually your GitHub org/user name.
-  projectName: 'nixos-mutinynet-tutorial', // Usually your repo name.
+  projectName: 'cln-plugin-tutorial', // Usually your repo name.
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -54,7 +54,7 @@ const config = {
         title: 'Tiny Lightning Node Tutorial',
         items: [
           {
-            href: 'https://github.com/chrisguida/nixos-mutinynet-tutorial/',
+            href: 'https://github.com/chrisguida/cln-plugin-tutorial/',
             label: 'GitHub',
             position: 'right',
           },
@@ -90,12 +90,12 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/chrisguida/nixos-mutinynet-tutorial/',
+                href: 'https://github.com/chrisguida/cln-plugin-tutorial/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} NixOS MutinyNet Tutorial. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} CLN Plugin Tutorial. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

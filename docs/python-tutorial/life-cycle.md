@@ -108,7 +108,7 @@ The plugin's response will look something like this:
 Now your plugin can do stuff!
 
 # Exercise: Build a bare minimum plugin that conforms to the above requirements
-If you click on [`python-plugin/helloworld.py`](/home/runner/$REPL_SLUG/python-plugin/helloworld.py) in the file tree to your left, you will see a basic CLN plugin written in Python. It doesn't do much, yet. It pretty much just runs. We'll add more to it as we work through this tutorial.
+If you click on `python-plugin/helloworld.py` in the file tree to your left, you will see a basic CLN plugin written in Python. It doesn't do much, yet. It pretty much just runs. We'll add more to it as we work through this tutorial.
 
 Here it is:
 ```py
