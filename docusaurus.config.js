@@ -51,7 +51,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'Tiny Lightning Node Tutorial',
+        title: 'CLN Plugin Tutorial',
         items: [
           {
             href: 'https://github.com/chrisguida/cln-plugin-tutorial/',
@@ -73,6 +73,10 @@ const config = {
               {
                 label: 'Python Tutorial',
                 to: '/python-tutorial',
+              },
+              {
+                label: 'Rust Tutorial',
+                to: '/rust-tutorial',
               }
             ],
           },
